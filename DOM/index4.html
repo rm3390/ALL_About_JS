@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;color: wheat ; ">
+    <ol class="language">
+        <li>JS</li>
+    </ol>
+</body>
+<script>
+    function addLanguage(langName){
+       const li = document.createElement('li');
+       li.innerHTML=`${langName}`;
+       document.querySelector('.language').appendChild(li);
+
+    }
+    addLanguage("C++");
+
+    function addAltLanguage(langName){
+        document.querySelector('.language').appendChild((document.createElement('li')).appendChild(document.createTextNode(langName)))
+
+    }
+    addAltLanguage("C")
+
+
+    // 👀🙇‍♂️👀 Edit or Replace the element
+    const secondLang = document.querySelector("li:nth-child(2)");
+    const newli = document.createElement("li")
+    newli.textContent="Ruby";
+    secondLang.replaceWith(newli)
+
+    // OR 🚨👀🙇‍♂️👀
+    const firstLang = document.querySelector("li:last-child");
+    firstLang.outerHTML='<li>TS</li>'
+
+
+   // Remove the element
+   const lastLang = document.querySelector('li:last-child');
+   lastLang.remove();
+
+</script>
+</html>
